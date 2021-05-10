@@ -1,8 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Service;
+use App\Http\Controllers\{
+    HomepageController,
+    ViewCityDetailsController,
+    ViewServiceController,
+    CreateServiceController,
+    StoreServiceController
+};
 
-Route::get('/', function () {
-    return Service::all();
-});
+Route::get('/', HomepageController::class)->name('home');
+Route::get('cities/{city}', ViewCityDetailsController::class)->name('cities.show');
+Route::get('services/create', CreateServiceController::class)->name('services.create');
+Route::post('services/store', StoreServiceController::class)->name('services.store');
+Route::get('services/{service}', ViewServiceController::class)->name('services.show');

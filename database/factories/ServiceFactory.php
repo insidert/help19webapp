@@ -25,7 +25,8 @@ class ServiceFactory extends Factory
             'name' => $this->faker->name(),
             'contact' => $this->faker->phoneNumber(),
             'description' => $this->faker->paragraph(),
-            'url' => $this->faker->url()
+            'url' => $this->faker->url(),
+            'address' => $this->faker->address()
         ];
     }
 }

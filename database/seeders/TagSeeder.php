@@ -15,12 +15,25 @@ class TagSeeder extends Seeder
     public function run()
     {
         Tag::findOrCreate('rajahmundry', 'city');
+        Tag::findOrCreate('visakhapatnam', 'city');
+        Tag::findOrCreate('hyderabad', 'city');
+        Tag::findOrCreate('warangal', 'city');
+        Tag::findOrCreate('ranchi', 'city');
+        Tag::findOrCreate('andhra pradesh', 'state');
+        Tag::findOrCreate('telangana', 'state');
+        Tag::findOrCreate('jharkhand', 'state');
         Tag::findOrCreate('remdesivir', 'medicine');
         Tag::findOrCreate('free home delivery', 'food');
+        Tag::findOrCreate('paid home delivery', 'food');
         Tag::findOrCreate('oxygen beds', 'hospital');
+        Tag::findOrCreate('icu beds', 'hospital');
+        Tag::findOrCreate('normal beds', 'hospital');
+        Tag::findOrCreate('ventilator beds', 'hospital');
+        Tag::findOrCreate('ventilator beds', 'hospital');
         Tag::findOrCreate('oxygen suppliers', 'medical-equipment');
+        Tag::findOrCreate('oxygen cylinders', 'medical-equipment');
+        Tag::findOrCreate('oxygen concentrators', 'medical-equipment');
         Tag::findOrCreate('government website', 'weblink');
-        Tag::findOrCreate('andhra pradesh', 'state');
-        Tag::findOrCreate('east godavari', 'district');
+        Tag::findOrCreate('twitter feed', 'weblink');
     }
 }
