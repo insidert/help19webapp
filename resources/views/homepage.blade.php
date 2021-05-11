@@ -15,7 +15,7 @@
     @foreach ($cities as $city)
         <div class="col-sm-12 col-md-2 mb-3">
           <div class="p-3 shadow">
-            <a href="{{ route('cities.show', ['city' => $city->slug]) }}">{{ ucwords($city->name) }}</a>
+            <a href="{{ route('cities.show', ['city' => $city->id]) }}">{{ ucwords($city->name) }}</a>
           </div>
         </div>
     @endforeach

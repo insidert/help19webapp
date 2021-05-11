@@ -22,7 +22,6 @@ Please [add an issue](https://github.com/insidert/help19webapp/issues/new) befor
 
 ## Implementation
 
-- The project relies on Spatie's [Laravel tags package](https://spatie.be/docs/laravel-tags/v4/introduction) Go through the docs to get familiar with the tag implementations.
-- All the services are tagged using the package.
-- Tag type is also used.
-- Every new tag should belong to one of the tag types.
+- A tag is created first. Each tag is given a name and type.
+- The tag type is used to group tags.
+- A service is created and the tags are attached.

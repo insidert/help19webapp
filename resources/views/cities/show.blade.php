@@ -4,14 +4,14 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1 class="fw-bold">{{ ucwords($city) }}</h1>
+      <h1 class="fw-bold">{{ ucwords($city_name->name) }}</h1>
     </div>
   </div>
 
   <div class="row mt-5">
     <div class="col-sm-12 col-md-2">
       <h5 class="fw-bold">Filters</h5>
-      <form method="GET" action="{{ route('cities.show', ['city' => $city]) }}">
+      {{-- <form method="GET" action="{{ route('cities.show', ['city' => $city]) }}">
         @foreach ($tag_types as $tag_type)
         <div class="form-check">
           <input class="form-check-input" type="radio" id="{{ $tag_type }}" name="type" value="{{ $tag_type }}">
@@ -19,7 +19,7 @@
         </div>
         @endforeach
         <button class="btn btn-sm btn-primary" type="submit">Filter Results</button>
-      </form>
+      </form> --}}
     </div>
     <div class="col-sm-12 col-md-10">
         <h5 class="fw-bold">Results</h5>

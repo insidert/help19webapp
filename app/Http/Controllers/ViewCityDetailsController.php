@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Models\Service;
-use Spatie\Tags\Tag;
+use App\Models\Tag;
+use Illuminate\Support\Arr;
 
 class ViewCityDetailsController extends Controller
 {
@@ -16,14 +18,12 @@ class ViewCityDetailsController extends Controller
      */
     public function __invoke(Request $request, $city)
     {
-        $tag = Tag::findOrCreate($city, 'city');
+        $city_name = Tag::select('name')->where('id', $city)->first();
 
-        $services = Service::withAnyTags([$tag])->get();
+        $service_tags = DB::table('service_tag')->select('service_id')->where('tag_id', $city)->get();
 
-        $tag_types = Tag::getTypes();
+        $services = Service::with('tags:name')->whereIn('id', Arr::pluck($service_tags, 'service_id'))->get();
 
-        $tag_types = array_diff($tag_types->toArray(), ['city', 'state', 'district', null]);
-
-        return view('cities.show', compact('services', 'city', 'tag_types'));
+        return view('cities.show', compact('services', 'city_name', 'city'));
     }
 }

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Spatie\Tags\Tag;
+use App\Models\Tag;
+use App\Queries\TagQueries;
 
 class CreateServiceController extends Controller
 {
@@ -15,23 +16,7 @@ class CreateServiceController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $all_tags = Tag::all();
-
-        $types = Tag::getTypes();
-
-        $tags = [];
-
-        for ($i=0; $i < count($types); $i++) { 
-            $tags[$types[$i]] = [];
-        }
-
-        for ($i=0; $i < count($all_tags); $i++) { 
-            $type = $all_tags[$i]['type'];
-            
-            $name = $all_tags[$i]['name'];
-
-            array_push($tags[$type], $name);
-        }
+        $tags = TagQueries::tagsByType();
 
         return view('services.create', compact('tags'));
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use Spatie\Tags\Tag;
+use Illuminate\Support\Arr;
 
 class StoreServiceController extends Controller
 {
@@ -24,17 +25,13 @@ class StoreServiceController extends Controller
             'tags.required' => 'At least one tag is required for the service'
         ]);
 
+        unset($data['tags']);
+
         $service = Service::create($data);
 
-        foreach ($request->tags as $key => $tag) {
-            logger($key);
-            
-            $tag_with_type = Tag::findOrCreate($tag, $key);
+        $tags = Arr::flatten($request->tags);
 
-            logger($tag_with_type);
-            
-            $service->attachTag($tag_with_type, $key);
-        }
+        $service->tags()->sync($request->tags);
 
         return redirect()
             ->route('services.show', ['service' => $service->id])

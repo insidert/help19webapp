@@ -4,11 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Tags\HasTags;
 
 class Service extends Model
 {
-    use HasFactory, HasTags;
+    use HasFactory;
 
     protected $guarded = [];
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function ofACity($city_id)
+    {
+        return $this->belongsToMany(Tag::class)->wherePivot('tag_id', $city_id);
+    }
 }

@@ -38,8 +38,8 @@
               <p class="fw-bold">{{ ucwords($key) }}</p>
               @foreach ($tag_item as $item)
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="{{ $key . $item }}" name="tags[{{ $key }}]" value="{{ $item }}">
-                  <label class="form-check-label" for="{{ $key . $item }}">{{ ucwords($item) }}</label>
+                  <input class="form-check-input" type="checkbox" id="{{ $key . $item['id'] }}" name="tags[]" value="{{ $item['id'] }}">
+                  <label class="form-check-label" for="{{ $key . $item['id'] }}">{{ ucwords($item['name']) }}</label>
                 </div>
               @endforeach
             </div>
