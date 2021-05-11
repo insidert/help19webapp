@@ -9,4 +9,6 @@ use Spatie\Tags\HasTags;
 class Service extends Model
 {
     use HasFactory, HasTags;
+
+    protected $guarded = [];
 }

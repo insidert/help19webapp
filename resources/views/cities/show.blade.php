@@ -48,11 +48,7 @@
           </div>
           @endif
 
-          <h6>
-            @foreach ($service->tags as $tag)
-              <span class="badge bg-dark">{{ $tag->name }}</span>
-            @endforeach
-          </h6>
+          @include('services.tags', ['tags' => $service->tags])
 
         </div>
         @endforeach

@@ -35,5 +35,23 @@ class TagSeeder extends Seeder
         Tag::findOrCreate('oxygen concentrators', 'medical-equipment');
         Tag::findOrCreate('government website', 'weblink');
         Tag::findOrCreate('twitter feed', 'weblink');
+        Tag::findOrCreate('A+', 'plasma-donor');
+        Tag::findOrCreate('A-', 'plasma-donor');
+        Tag::findOrCreate('A1+', 'plasma-donor');
+        Tag::findOrCreate('A1-', 'plasma-donor');
+        Tag::findOrCreate('A1B+', 'plasma-donor');
+        Tag::findOrCreate('A1B-', 'plasma-donor');
+        Tag::findOrCreate('A2+', 'plasma-donor');
+        Tag::findOrCreate('A2-', 'plasma-donor');
+        Tag::findOrCreate('A2B+', 'plasma-donor');
+        Tag::findOrCreate('A2B-', 'plasma-donor');
+        Tag::findOrCreate('AB+', 'plasma-donor');
+        Tag::findOrCreate('AB-', 'plasma-donor');
+        Tag::findOrCreate('B+', 'plasma-donor');
+        Tag::findOrCreate('B-', 'plasma-donor');
+        Tag::findOrCreate('Bombay Blood Group', 'plasma-donor');
+        Tag::findOrCreate('INRA', 'plasma-donor');
+        Tag::findOrCreate('O+', 'plasma-donor');
+        Tag::findOrCreate('O-', 'plasma-donor');
     }
 }
