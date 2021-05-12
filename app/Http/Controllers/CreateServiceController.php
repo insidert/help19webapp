@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tag;
+use App\Models\{Tag, City};
 use App\Queries\TagQueries;
 
 class CreateServiceController extends Controller
@@ -18,6 +18,8 @@ class CreateServiceController extends Controller
     {
         $tags = TagQueries::tagsByType();
 
-        return view('services.create', compact('tags'));
+        $cities = City::select('id', 'name')->orderBy('name', 'asc')->get();
+
+        return view('services.create', compact('tags', 'cities'));
     }
 }

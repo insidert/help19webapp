@@ -12,7 +12,7 @@
 
     <div class="col-sm-12">
         <h4 class="fw-bold">{{ $service->name }}</h4>
-        <p class="mb-0"><i class="bi bi-telephone-outbound me-3"></i> {{ $service->contact ?? 'No contact details' }}</p>
+        <p class="mb-0"><i class="bi bi-telephone-outbound me-3"></i> {{ $service->phone }}</p>
         @if ($service->address)
         <p class="mb-0"><i class="bi bi-geo-alt me-3"></i> {{ $service->address }}</p>
         @endif

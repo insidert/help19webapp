@@ -5,7 +5,7 @@ This is a [Laravel](https://laravel.com) based web app to provide an interface f
 ## Project goals and focus
 
 - Provide an interface to add services like oxygen suppliers, food delivery, hospital beds etc.
-- Publish the feature first. Worry about design principles and patterns later.
+- Publish the feature first. Worry about design principles, patterns and best practices later.
 
 ## Adding improvements
 

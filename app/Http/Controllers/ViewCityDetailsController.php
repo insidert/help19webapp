@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Models\Service;
-use App\Models\Tag;
+use App\Models\{Tag, City};
 use Illuminate\Support\Arr;
+use App\Queries\TagQueries;
+use Illuminate\Database\Eloquent\Builder;
 
 class ViewCityDetailsController extends Controller
 {
@@ -16,14 +18,24 @@ class ViewCityDetailsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request, $city)
+    public function __invoke(Request $request,City $city)
     {
-        $city_name = Tag::select('name')->where('id', $city)->first();
+        if (empty ($city)) {
+            abort(404);
+        }
 
-        $service_tags = DB::table('service_tag')->select('service_id')->where('tag_id', $city)->get();
+        $tags_for_filters = TagQueries::tagsByType();
 
-        $services = Service::with('tags:name')->whereIn('id', Arr::pluck($service_tags, 'service_id'))->get();
+        $services_query = Service::with('tags:name');
 
-        return view('cities.show', compact('services', 'city_name', 'city'));
+        if ($request->has('filter')) {
+            $services_query = $services_query->whereHas('tags', function (Builder $query) {
+                $query->where('tag_id', request()->filter);
+            });
+        }
+
+        $services = $services_query->where('city_id', $city->id)->get();
+
+        return view('cities.show', compact('services', 'city', 'tags_for_filters'));
     }
 }

@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(CitySeeder::class);
         $this->call(TagSeeder::class);
         // $this->call(ServiceSeeder::class);
     }

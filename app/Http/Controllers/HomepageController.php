@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tag;
+use App\Models\City;
 
 class HomepageController extends Controller
 {
@@ -15,7 +15,7 @@ class HomepageController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $cities = Tag::select('id', 'name')->where('type', 'city')->get();
+        $cities = City::select('id', 'name', 'state')->orderBy('name', 'asc')->get();
 
         return view('homepage', compact('cities'));
     }

@@ -23,10 +23,6 @@ class TagQueries
 
         $tags = [];
 
-        foreach ($all_tags as $tag) {
-            # code...
-        }
-
         foreach ($tag_types as $type) {
             $tags[$type] = [];
         }
