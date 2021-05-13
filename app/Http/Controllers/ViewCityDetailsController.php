@@ -34,8 +34,8 @@ class ViewCityDetailsController extends Controller
             });
         }
 
-        $services = $services_query->where('city_id', $city->id)->get();
-
+        $services = $services_query->where('city_id', $city->id)->paginate(5)->withQueryString();
+        
         return view('cities.show', compact('services', 'city', 'tags_for_filters'));
     }
 }

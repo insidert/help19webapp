@@ -26,7 +26,7 @@ $grays: (
 ) !default;
 // fusv-enable
 
-$blue:    #0d6efd !default;
+$blue:    #3740ff !default;
 $indigo:  #6610f2 !default;
 $purple:  #160d27 !default;
 $pink:    #d63384 !default;
@@ -55,7 +55,7 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
-$primary:       $purple !default;
+$primary:       $blue;
 $secondary:     $teal;
 $success:       $green !default;
 $info:          $cyan !default;

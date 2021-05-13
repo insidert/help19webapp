@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Service;
+use App\Models\{Service, City};
 use Spatie\Tags\Tag;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;

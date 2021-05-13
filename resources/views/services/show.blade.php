@@ -1,16 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mb-5">
   <div class="row">
 
-    @if (session('status'))
-      <div class="col-12">
-        @include('status')
-      </div>
-    @endif
+    <div class="col-sm-12 col-md-4 mx-auto">
 
-    <div class="col-sm-12">
+        @if (session('status'))
+          <div class="my-3">
+            @include('status')
+          </div>
+        @endif
+
         <h4 class="fw-bold">{{ $service->name }}</h4>
         <p class="mb-0"><i class="bi bi-telephone-outbound me-3"></i> {{ $service->phone }}</p>
         @if ($service->address)
@@ -18,7 +19,7 @@
         @endif
 
         @if ($service->description)
-        <p>{{ $service->description }}</p>
+        <p class="mt-3">{{ $service->description }}</p>
         @endif
 
         @if ($service->url)
@@ -28,6 +29,16 @@
         @endif
 
         @include('services.tags', ['tags' => $service->tags])
+
+        <div class="p-4 mt-4 bg-light rounded">
+          <p class="mb-0">Actions</p>
+          <share 
+            title="{{ $service->name }}"
+            text="{{ $service->description ?? 'Serivce details'}}"
+            url="{{ route('services.show', ['service' => $service->id]) }}"
+            short-text="Service Details"  
+          ></share>
+        </div>
 
     </div>
   </div>

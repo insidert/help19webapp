@@ -24,7 +24,7 @@
     <title>Help 19</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow mb-4">
       <div class="container">
         <a class="navbar-brand fw-bold" href="/">Help19</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,18 +33,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
-              <a class="nav-link" aria-current="page" href="/">Home</a>
+              <a class="nav-link" aria-current="page" href="/"><i class="bi bi-menu-button-fill"></i> Home</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="/services/create">Create New Service</a>
+              <a class="nav-link" href="/services/create"><i class="bi bi-plus-circle-fill"></i> Create New Service</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/contribute"><i class="bi bi-code-slash"></i> Contribute</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/contact"><i class="bi bi-telephone-outbound-fill"></i> Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    @yield('content')
+    <main id="help19">
+      @yield('content')
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
   </body>
 </html>

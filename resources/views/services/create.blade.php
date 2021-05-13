@@ -4,13 +4,14 @@
 <div class="container mb-5">
   <div class="row">
     <div class="col-md-6 mx-auto">
-      <h1 class="fw-bold mb-4">Create new service</h1>
+      <h1 class="fw-bold mb-0">Create new service</h1>
+      <small>Select city and then add a service.</small>
 
       @include('errors')
 
-      <form action="{{ route('services.store') }}" method="POST">
+      <form action="{{ route('services.store') }}" method="POST" class="mt-4">
         @csrf
-        <div class="bg-light p-3 rounded mb-3">
+        <div class="bg-light p-5 rounded mb-3">
           <h6 class="fw-bold mb-3">City</h6>
 
           <div class="mb-3">
@@ -18,7 +19,7 @@
             <select name="city" id="city" class="form-select">
               <option value="">Select City</option>
               @foreach ($cities as $city)
-                <option value="{{ $city->id }}" @if (old('city') == $city->id) selected @endif>{{ $city->name }}</option>
+                <option value="{{ $city->id }}" @if (old('city') == $city->id) selected @endif>{{ ucwords($city->name) }}</option>
               @endforeach
             </select>
           </div>

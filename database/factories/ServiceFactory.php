@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Service;
+use App\Models\{Service, City};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ServiceFactory extends Factory
@@ -23,7 +23,7 @@ class ServiceFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'contact' => $this->faker->phoneNumber(),
+            'phone' => $this->faker->phoneNumber(),
             'description' => $this->faker->paragraph(),
             'url' => $this->faker->url(),
             'address' => $this->faker->address(),

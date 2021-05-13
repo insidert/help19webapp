@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Service;
-use Spatie\Tags\Tag;
+use App\Models\{Service, City, Tag};
+use Illuminate\Support\Arr;
 
 class ServiceSeeder extends Seeder
 {
@@ -15,17 +15,23 @@ class ServiceSeeder extends Seeder
      */
     public function run()
     {
-        $serivces = Service::factory()->count(50)->create();
+        $cities = City::all();
 
-        $serivces->each(function ($service) {
-            $tags = Tag::all();
+        $tag_types = Tag::all();
 
-            $random_tags = $tags->random(7)->all();
+        foreach ($cities as $city) {
+            $services = Service::factory()->count(50)->create([
+                'city_id' => $city->id,
+                'name' => $city->name . '-' . \Illuminate\Support\Str::random(5)    
+            ]);
 
-            for ($i=0; $i < count($random_tags); $i++) { 
-                logger($random_tags[$i]);
-                $data = $service->attachTag($random_tags[$i]['name'], $random_tags[$i]['type']);
+            foreach ($services as $service) {
+                $tag_ids = $tag_types->random(mt_rand(1, 5));
+
+                $tag_ids = Arr::pluck($tag_ids, 'id');
+
+                $service->tags()->sync($tag_ids);
             }
-        });
+        }
     }
 }
