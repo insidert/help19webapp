@@ -53,6 +53,18 @@
       @yield('content')
     </main>
 
+    <footer>
+      <div class="container mb-5">
+        <div class="row">
+          <div class="col">
+            <hr>
+            <h6 class="fw-bold mt-5">Disclaimer</h6>
+            <p>Please validate and thoroughly check the details after contacting the concerned parties. All of the data on this website has been curated from different sources. Neither the creators of this website nor curators nor the institutions involved in running this website is liable or reponsible in any way.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="{{ mix('/js/app.js') }}"></script>
   </body>

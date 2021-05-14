@@ -16597,6 +16597,10 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     };
+
+    return {
+      initiateShare: initiateShare
+    };
   }
 });
 
@@ -16626,7 +16630,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
     "class": "btn btn-primary",
     onClick: _cache[1] || (_cache[1] = function () {
-      return _ctx.initiateShare && _ctx.initiateShare.apply(_ctx, arguments);
+      return $setup.initiateShare && $setup.initiateShare.apply($setup, arguments);
     })
   }, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Share " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.shortText), 1
   /* TEXT */

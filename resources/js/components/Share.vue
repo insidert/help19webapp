@@ -20,6 +20,10 @@
             .catch((error) => alert('Share is not supported on your device.'));
         }
       }
+
+      return {
+        initiateShare
+      }
     }
   }
 </script>

@@ -28,14 +28,18 @@ class ViewCityDetailsController extends Controller
 
         $services_query = Service::with('tags:name');
 
+        $tag_name = "";
+
         if ($request->has('filter')) {
             $services_query = $services_query->whereHas('tags', function (Builder $query) {
                 $query->where('tag_id', request()->filter);
             });
+
+            $tag_name = Tag::select('name', 'type')->where('id', request()->filter)->first();
         }
 
         $services = $services_query->where('city_id', $city->id)->paginate(5)->withQueryString();
         
-        return view('cities.show', compact('services', 'city', 'tags_for_filters'));
+        return view('cities.show', compact('services', 'city', 'tags_for_filters', 'tag_name'));
     }
 }
