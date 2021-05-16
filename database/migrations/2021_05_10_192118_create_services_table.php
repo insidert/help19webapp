@@ -15,12 +15,13 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('city_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->string('phone');
             $table->text('description')->nullable();
             $table->text('address')->nullable();
             $table->string('url')->nullable();
-            $table->foreignId('city_id')->constrained()->cascadeOnDelete();
+            $table->json('status')->nullable();
             $table->timestamps();
         });
     }

@@ -30,7 +30,7 @@
 
         @include('services.tags', ['tags' => $service->tags])
 
-        <div class="p-4 mt-4 bg-light rounded">
+        <div class="p-4 my-4 bg-light rounded">
           <p class="mb-0">Actions</p>
           <share 
             title="{{ $service->name }}"
@@ -39,6 +39,12 @@
             short-text="Service Details"  
           ></share>
         </div>
+
+        <status 
+          v-bind:status="{{ json_encode($service->status) }}" 
+          url="{{ route('services.status.store', ['service' => $service->id]) }}">
+        </status>
+
 
     </div>
   </div>

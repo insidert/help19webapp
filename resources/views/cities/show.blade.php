@@ -90,9 +90,9 @@
         <a href="{{ route('services.show', ['service' => $service->id]) }}">
           <h4 class="fw-bold">{{ $service->name }}</h4>
         </a>
-        <p class="mb-0">{{ $service->phone }}</p>
+        <p class="mb-0"><i class="bi bi-telephone-outbound me-3"></i> {{ $service->phone }}</p>
         @if ($service->address)
-        <p class="mb-0">{{ $service->address }}</p>
+        <p><i class="bi bi-geo-alt me-3"></i> {{ $service->address }}</p>
         @endif
 
         @if ($service->description)
@@ -106,6 +106,11 @@
         @endif
 
         @include('services.tags', ['tags' => $service->tags])
+
+        <status 
+          v-bind:status="{{ json_encode($service->status) }}" 
+          url="{{ route('services.status.store', ['service' => $service->id]) }}">
+        </status>
 
       </div>
       @endforeach

@@ -11,6 +11,10 @@ class Service extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'status' => 'array'
+    ];
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class);

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use App\Models\{Service, City};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -27,7 +28,11 @@ class ServiceFactory extends Factory
             'description' => $this->faker->paragraph(),
             'url' => $this->faker->url(),
             'address' => $this->faker->address(),
-            'city_id' => City::factory()
+            'city_id' => City::factory(),
+            'status' => [
+                'name' => $this->faker->randomElement(['verified', 'not-working', 'fake',]),
+                'markedOn' => Carbon::now()->format('M d, Y -  h:i a')
+            ]
         ];
     }
 }
