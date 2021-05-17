@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light p-3">
+  <div class="bg-light p-4">
     <small>Status</small> <br>
     <template v-if="status">
       <div class="mb-3">

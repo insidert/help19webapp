@@ -29,7 +29,10 @@ class StoreServiceController extends Controller
             }),
             'name' => 'required',
             'phone' => 'required|unique:services',
-            'tags' => 'required'
+            'tags' => 'required',
+            'address' => 'nullable',
+            'description' => 'nullable',
+            'url' => 'nullable|url'
         ], [
             'tags.required' => 'At least one tag is required for the service',
             'new_city' => 'Either select city from the dropdown or enter a new city.'

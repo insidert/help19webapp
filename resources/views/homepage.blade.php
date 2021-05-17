@@ -28,7 +28,7 @@
     <div class="col-sm-12 col-md-4">
       <div class="p-5 shadow">
         <div class="text-center mb-4">
-          <img src="/images/help19.jpeg" alt="Help19" height="128" class="rounded-circle">
+          <img src="/images/help19.png" alt="Help19" height="128" class="rounded-circle">
         </div>
         <p class="mb-0">Help 19, is community-driven and open-source project. It means, any one can add details to the website and the code written to build this project is avilable to every one. If you are a developer, you can make changes to the website directly.</p>
         <a href="/contribute">Read the contribution guide.</a>

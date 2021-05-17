@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mb-5">
+<div class="container my-5">
   <div class="row">
 
-    <div class="col-sm-12 col-md-4 mx-auto">
+    <div class="col-sm-12 col-md-6 mx-auto">
 
         @if (session('status'))
           <div class="my-3">
@@ -14,9 +14,13 @@
 
         <h4 class="fw-bold">{{ $service->name }}</h4>
         <p class="mb-0"><i class="bi bi-telephone-outbound me-3"></i> {{ $service->phone }}</p>
-        @if ($service->address)
-        <p class="mb-0"><i class="bi bi-geo-alt me-3"></i> {{ $service->address }}</p>
-        @endif
+        <p class="mb-0">
+          <i class="bi bi-geo-alt me-3"></i> 
+          @if ($service->address)
+            {{ $service->address }},
+          @endif  
+          {{ ucwords($service->city->name) }}.
+        </p>
 
         @if ($service->description)
         <p class="mt-3">{{ $service->description }}</p>

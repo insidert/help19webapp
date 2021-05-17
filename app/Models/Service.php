@@ -20,8 +20,8 @@ class Service extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    public function ofACity($city_id)
+    public function city()
     {
-        return $this->belongsToMany(Tag::class)->wherePivot('tag_id', $city_id);
+        return $this->belongsTo(City::class);
     }
 }
