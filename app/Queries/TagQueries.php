@@ -10,7 +10,7 @@ class TagQueries
 {
     public static function allTypes()
     {
-        $tags_types = DB::table('tags')->selectRaw("DISTINCT type")->get();
+        $tags_types = DB::table('tags')->selectRaw("DISTINCT type")->orderBy('type', 'asc')->get();
 
         return Arr::pluck($tags_types, 'type');
     }

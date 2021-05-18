@@ -11,7 +11,7 @@
               : status.name == 'fake' 
                 ? 'bg-danger' 
                 : 'bg-warning text-dark']">{{ status.name }}</span></p>
-        <small>on {{ status.markedOn }}</small>
+        <small>Status last changed on <stong>{{ status.markedOn }}</stong></small>
       </div> 
     </template>
 

@@ -16,6 +16,8 @@ class TagSeeder extends Seeder
     {
         Tag::create(['name' => 'free home delivery', 'type' => 'food']);
         Tag::create(['name' => 'paid home delivery', 'type' => 'food']);
+        Tag::create(['name' => 'rapid-test', 'type' => 'test-center']);
+        Tag::create(['name' => 'rtpcr', 'type' => 'test-center']);
         Tag::create(['name' => 'oxygen beds', 'type' => 'hospital']);
         Tag::create(['name' => 'icu beds', 'type' => 'hospital']);
         Tag::create(['name' => 'normal beds', 'type' => 'hospital']);
@@ -25,23 +27,5 @@ class TagSeeder extends Seeder
         Tag::create(['name' => 'oxygen suppliers', 'type' => 'medical-equipment']);
         Tag::create(['name' => 'oxygen cylinders', 'type' => 'medical-equipment']);
         Tag::create(['name' => 'oxygen concentrators', 'type' => 'medical-equipment']);
-        Tag::create(['name' => 'A+', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A-', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A1+', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A1-', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A1B+', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A1B-', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A2+', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A2-', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A2B+', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'A2B-', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'AB+', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'AB-', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'B+', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'B-', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'Bombay Blood Group', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'INRA', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'O+', 'type' => 'plasma-donor']);
-        Tag::create(['name' => 'O-', 'type' => 'plasma-donor']);
     }
 }
