@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-primary" @click="initiateShare">
+  <button class="btn btn-primary btn-sm" @click="initiateShare">
     <i class="bi bi-share-fill"></i> Share {{ shortText }}
   </button>
 </template>
@@ -17,7 +17,7 @@
             url: props.url,
           })
             .then(() => console.log('Successful share'))
-            .catch((error) => alert('Share is not supported on your device.'));
+            .catch((error) => console.log('Error share.'));
         }
       }
 

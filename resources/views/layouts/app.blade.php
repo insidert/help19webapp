@@ -4,24 +4,18 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ mix('/css/vendor.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <style>
       body {
         font-family: 'Inter', sans-serif;
       }
     </style>
-
     <title>Help 19</title>
+    <meta name="description" content="Add and search food delivery services, hospitals, medical suppliers and testing centers to help Covid-19."/>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow mb-4">

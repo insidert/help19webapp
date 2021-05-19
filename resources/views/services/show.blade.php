@@ -38,7 +38,7 @@
           <p class="mb-0">Actions</p>
           <share 
             title="{{ $service->name }}"
-            text="{{ $service->description ?? 'Serivce details'}}"
+            text="{{ $service->name }}"
             url="{{ route('services.show', ['service' => $service->id]) }}"
             short-text="Service Details"  
           ></share>

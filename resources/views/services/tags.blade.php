@@ -1,4 +1,4 @@
-<div class="bg-light p-4 mt-3">
+<div class="my-3">
   <small>Tags</small>
   <h6 class="mb-0">
     @foreach ($tags as $tag)

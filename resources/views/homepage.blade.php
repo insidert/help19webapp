@@ -6,7 +6,7 @@
     <div class="col-sm-12 col-md-8 mb-4">
       <div>
         <h1 class="fw-bold mb-0">Help 19</h1>
-        <h5>Add and search food delivery services, hospitals, medical suppliers and plasma donors to help Covid-19. No sign up required.</h5>
+        <h5>Add and search food delivery services, hospitals, medical suppliers and testing centers to help Covid-19. No sign up required.</h5>
         <a href="/services/create" class="btn btn-secondary">Create New Service</a>
       </div>
 
