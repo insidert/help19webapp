@@ -87,16 +87,18 @@
       @endif
       @foreach ($services as $service)
       <div class="py-4 border-bottom">
-        @if ($service->status['name'] == 'verified')
-          <small class="text-success"><i class="bi bi-patch-check me-1"></i> Verified</small>
-        @endif
+        @if ($service->status != "")
+          @if ($service->status['name'] == 'verified')
+            <small class="text-success"><i class="bi bi-patch-check me-1"></i> Verified</small>
+          @endif
 
-        @if ($service->status['name'] == 'not-working')
-          <small class="text-warning"><i class="bi bi-telephone-x me-1"></i> Not working</small>
-        @endif
+          @if ($service->status['name'] == 'not-working')
+            <small class="text-warning"><i class="bi bi-telephone-x me-1"></i> Not working</small>
+          @endif
 
-        @if ($service->status['name'] == 'fake')
-          <small class="text-danger"><i class="bi bi-hand-thumbs-down me-1"></i> Fake</small>
+          @if ($service->status['name'] == 'fake')
+            <small class="text-danger"><i class="bi bi-hand-thumbs-down me-1"></i> Fake</small>
+          @endif
         @endif
         <h4 class="fw-bold">
           {{ $service->name }}
