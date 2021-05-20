@@ -38,6 +38,21 @@
             <li class="nav-item mx-3">
               <a class="nav-link" href="/contact"><i class="bi bi-telephone-outbound-fill"></i> Contact</a>
             </li>
+            @auth
+            <li class="nav-item mx-3">
+              <a href="#" class="nav-link"><i class="bi bi-person-circle"></i> {{ Auth::user()->name }}</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#" onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();"><i class="bi-box-arrow-left"></i> Logout</a>
+    
+                  <form id="logout-form" action="/logout" method="POST" style="display: none;">{{ csrf_field() }}</form>
+            </li>
+            @else
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            </li>
+            @endauth
           </ul>
         </div>
       </div>
@@ -53,7 +68,7 @@
           <div class="col">
             <hr>
             <h6 class="fw-bold mt-5">Disclaimer</h6>
-            <p>Please validate and thoroughly check the details after contacting the concerned parties. All of the data on this website has been curated from different sources. Neither the creators of this website nor curators nor the institutions involved in running this website is liable or reponsible in any way.</p>
+            <p>This website is solely for information purpose only. Every thing on this website is done by volunteering. Please validate and thoroughly check the details after contacting the concerned parties. All of the data on this website has been curated from different sources. The creators of this website or curators or the institutions involved in running this website is not liable in any way and not reponsible for any reasons.</p>
           </div>
         </div>
       </div>

@@ -7,7 +7,9 @@ use App\Http\Controllers\{
     ViewServiceController,
     CreateServiceController,
     StoreServiceController,
-    ChangeServiceStatusController
+    ChangeServiceStatusController,
+    LoginController,
+    LogoutController
 };
 
 Route::get('/', HomepageController::class)->name('home');
@@ -18,3 +20,6 @@ Route::get('services/{service}', ViewServiceController::class)->name('services.s
 Route::post('services/{service}/status', ChangeServiceStatusController::class)->name('services.status.store');
 Route::view('contribute', 'contribute');
 Route::view('contact', 'contact');
+Route::view('login', 'auth.login');
+Route::post('login', LoginController::class);
+Route::post('logout', LogoutController::class);

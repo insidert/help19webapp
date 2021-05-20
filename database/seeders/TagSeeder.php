@@ -22,7 +22,6 @@ class TagSeeder extends Seeder
         Tag::create(['name' => 'icu beds', 'type' => 'hospital']);
         Tag::create(['name' => 'normal beds', 'type' => 'hospital']);
         Tag::create(['name' => 'ventilator beds', 'type' => 'hospital']);
-        Tag::create(['name' => 'ventilator beds', 'type' => 'hospital']);
         Tag::create(['name' => 'remdesivir', 'type' => 'medicine']);
         Tag::create(['name' => 'oxygen suppliers', 'type' => 'medical-equipment']);
         Tag::create(['name' => 'oxygen cylinders', 'type' => 'medical-equipment']);

@@ -22,14 +22,14 @@
           {{ ucwords($service->city->name) }}.
         </p>
 
-        @if ($service->description)
-        <p class="mt-3">{{ $service->description }}</p>
+        @if ($service->url)
+        <p class="mb-0">
+          <i class="bi bi-link-45deg me-3"></i> <a href="{{ $service->url }}" target="_blank">{{ $service->url }}</a>
+        </p>
         @endif
 
-        @if ($service->url)
-        <div class="mt-2 mb-4">
-          <a href="{{ $service->url }}" target="_blank">{{ $service->url }}</a>
-        </div>
+        @if ($service->description)
+        <p class="mt-0"><i class="bi bi-file-earmark-text me-3"></i> {{ $service->description }}</p>
         @endif
 
         @include('services.tags', ['tags' => $service->tags])

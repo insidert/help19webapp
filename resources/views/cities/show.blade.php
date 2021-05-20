@@ -76,7 +76,7 @@
             title="{{ 'Help19' . ucwords($city->name) }}"
             text="{{ 'Service in' . $city->name }}"
             url="{{ route('cities.show', ['city' => $city->id]) }}"
-            short-text="City Details"  
+            short-text="Results"  
           ></share>
       </div>
 
@@ -87,30 +87,43 @@
       @endif
       @foreach ($services as $service)
       <div class="py-4 border-bottom">
-        <a href="{{ route('services.show', ['service' => $service->id]) }}">
-          <h4 class="fw-bold">{{ $service->name }}</h4>
-        </a>
-        <p class="mb-0"><i class="bi bi-telephone-outbound me-3"></i> {{ $service->phone }}</p>
-        @if ($service->address)
-        <p><i class="bi bi-geo-alt me-3"></i> {{ $service->address }}</p>
+        @if ($service->status['name'] == 'verified')
+          <small class="text-success"><i class="bi bi-patch-check me-1"></i> Verified</small>
         @endif
 
-        @if ($service->description)
-        <p>{{ $service->description }}</p>
+        @if ($service->status['name'] == 'not-working')
+          <small class="text-warning"><i class="bi bi-telephone-x me-1"></i> Not working</small>
+        @endif
+
+        @if ($service->status['name'] == 'fake')
+          <small class="text-danger"><i class="bi bi-hand-thumbs-down me-1"></i> Fake</small>
+        @endif
+        <h4 class="fw-bold">
+          {{ $service->name }}
+        </h4>
+        <p class="mb-0"><i class="bi bi-telephone-outbound me-3"></i> {{ $service->phone }}</p>
+        @if ($service->address)
+        <p class="mb-0"><i class="bi bi-geo-alt me-3"></i> {{ $service->address }}</p>
         @endif
 
         @if ($service->url)
-        <div class="mt-2 mb-4">
-          <a href="{{ $service->url }}" target="_blank">{{ $service->url }}</a>
-        </div>
+        <p class="mb-0">
+          <i class="bi bi-link-45deg me-3"></i> <a href="{{ $service->url }}" target="_blank">{{ $service->url }}</a>
+        </p>
+        @endif
+
+        @if ($service->description)
+        <p class="mt-0"><i class="bi bi-file-earmark-text me-3"></i> {{ $service->description }}</p>
         @endif
 
         @include('services.tags', ['tags' => $service->tags])
 
-        <status 
+        <a href="{{ route('services.show', ['service' => $service->id]) }}"><i class="bi bi-pencil-square"></i> Share details / Change status</a>
+
+        {{-- <status 
           v-bind:status="{{ json_encode($service->status) }}" 
           url="{{ route('services.status.store', ['service' => $service->id]) }}">
-        </status>
+        </status> --}}
 
       </div>
       @endforeach
